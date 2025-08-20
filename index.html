@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesForms.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Dados pessoais</h1>
+
+    <form>
+        <label for="nome">Nome: </label>
+        <input type="text" id="nome" name="nome" required> 
+
+
+        <label for="email"> Email: </label>
+        <input type="email" id="email" name="email" required> 
+
+        <label for="senha"> Senha:</label>
+        <input type="password" id="senha" name="password" required>
+
+        <label for="tel"> Telefone: </label>
+        <input type="tel" id="tel" name="tel" placeholder="(19)999999999">
+
+        <label for="site"> Site: </label>
+        <input type="site" id="site" name="site" required>
+
+        <label for="idade"> Idade: </label>
+        <input type="number" id="idade" name="idade" min="0" max="120">
+
+        <label for="nacionalidade"> Nacionalidade: </label>
+        <input list="países" id="nacionalidade" name="nacionalidade">
+
+        <datalist id="países">
+            <option value="Brasil">
+            <option value="Chile">
+            <option value="Uruguai">
+            <option value="Bolívia">
+            <option value="Paraguai">
+            <option value="Venezuela">
+            <option value="outros">
+            </option>
+        </datalist>
+
+        <h2>Data e horários</h2>
+
+
+        <label for="data"> Data: </label>
+        <input type="date" id="data" name="data" required>
+
+        <label for="hora"> Data </label>
+        <input type="time" id="hora" name="hora" required>
+
+        <label for="datahora">Data e horário: </label>
+        <input type="datetime" id="datahora" name="datahora" required>
+
+        <label for="mes"> Mês: </label>
+        <input type="month" id="mes" name="mes" required>
+
+        <label for="semana"> Semana: </label>
+        <input type="week" id="semana" name="semana" required>
+
+        <h2> Opções</h2>
+
+        <p>gênero musical preferido?</p>
+
+        <input type="radio" id="rock" name="musica" value="rock">
+        <label for="rock">Rock</label>
+
+        <input type="radio" id="samba" name="musica" value="samba">
+        <label for="samba">Samba</label>
+
+        <input type="radio" id="pop" name="musica" value="pop">
+        <label for="pop">Pop</label>
+
+        <input type="radio" id="mpb" name="musica" value="mpb">
+        <label for="mpb">MPB</label>
+
+
+        <p1>Interesses</p1> <br><br><br>
+
+        <input type="checkbox" id="tec" name="interesses" value="tec">
+        <label for="tec">Tecnologia</label>
+
+        <input type="checkbox" id="artes" name="interesses" value="artes">
+        <label for="artes">Artes</label>
+
+        <input type="checkbox" id="musica" name="interesses" value="musica">
+        <label for="musica">Música</label>
+
+        <input type="checkbox" id="esporte" name="interesses" value="esporte">
+        <label for="esporte">Esportes</label>
+
+        <h3>Feedback:</h3>
+
+        <label for="satisfacao"> Satisfação de 0 a 10:</label>
+        <input type="range" id="satisfacao" name="satisfacao"
+            min="0" max="10" value="5" oninput="saida.value=this.value">
+        <output id="saida">5</output>
+
+        <label for="corfav">Informe sua cor favorita: </label>
+        <input type="color" id="corfav" name="corfav" value="#000">
+
+        <label for="cidades">Cidade: </label>
+        <select id="cidades" name="cidades">
+            <option>selecione...</option>
+            <option>são paulo</option>
+            <option>rio de janeiro</option>
+            <option>belo horizonte</option>
+            <option>campinaas</option>
+         </select>
+
+
+         <label for="cidades">Cidades visitadas: </label>
+         <select id="cidades" name="cidades" multiple size="4">
+             <option value="">selecione...</option>
+             <option value="sp">são paulo</option>
+             <option value="rj">rio de janeiro</option>
+             <option value="bh">belo horizonte</option>
+             <option value="cmp">campinaas</option>
+          </select>
+
+
+          <label for="bio">Biografia</label>
+          <textarea id="bio" name="bio" rows="4" cols="30"></textarea>
+
+
+          <label for="arquivo">Selecione um arquivo</label>
+          <input type="file" id="arquivo" name="arquivo" accept=".pdf">
+
+
+          <label for="nomeNEditavel">nome não editável: </label>
+        <input type="text" id="nomeNEditavel" name="nome" value="joão" readonly> 
+
+        <label for="des">Campo desabilitado</label>
+        <input type="text" id="des" name="des" value="Indísponivel" readonly> 
+
+
+        <h2>Ações</h2>
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar</button>
+
+        <button type="buttom" onclick="alert('ATENÇÃO!!!')">Botão</button>
+
+
+
+    </form>
+    
+</body>
+</html>
