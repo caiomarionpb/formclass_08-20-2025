@@ -1,0 +1,179 @@
+/* ====== REGRAS GERAIS DA PÁGINA ====== */
+
+/* O seletor * (asterisco) aplica a todos os elementos da página.
+   Aqui usamos para garantir que padding/border sejam incluídos
+   no cálculo da largura/altura dos elementos (boa prática). */
+* {
+  box-sizing: border-box;
+}
+
+/* Define a fonte padrão da página, margem externa e cor de fundo. */
+body {
+  font-family: Verdana, sans-serif;  /* fonte sem serifa, fácil de ler */
+  margin: 20px;                      /* espaço em volta da página */
+  background: #eef2f7;               /* cor de fundo suave */
+  color: #333;                       /* cor do texto (cinza escuro) */
+  line-height: 1.4;                  /* altura da linha para melhor leitura */
+}
+
+/* Centraliza o título principal */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Deixa os subtítulos com cor azul e uma linha embaixo */
+h2 {
+  margin: 18px 0 10px;               /* espaçamento em cima e embaixo */
+  color: #0077b6;                    /* azul */
+  border-bottom: 1px solid #dcdcdc;  /* linha embaixo */
+  padding-bottom: 4px;               /* espaço entre texto e linha */
+}
+
+/* ====== FORMULÁRIOS ====== */
+
+/* Aparência geral dos formulários */
+form {
+  background: #fff;                      /* fundo branco */
+  padding: 16px;                         /* espaço interno */
+  border: 1px solid #dcdcdc;             /* borda cinza clara */
+  border-radius: 6px;                    /* cantos arredondados */
+  margin: 20px auto;                     /* espaço externo e centralização */
+  max-width: 640px;                      /* largura máxima */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);/* sombra leve para destacar */
+}
+
+/* Estilo dos rótulos (labels) */
+label {
+  margin-top: 10px;       /* espaço em cima do label */
+  margin-bottom: 4px;     /* espaço abaixo */
+  font-weight: bold;      /* deixa em negrito */
+  display: block;         /* cada label em uma linha separada */
+}
+
+/* Estilo básico para campos de texto, selects e textarea */
+input,
+select,
+textarea {
+  width: 100%;            /* ocupa toda a largura do formulário */
+  max-width: 100%;        /* não ultrapassa o limite do form */
+  padding: 8px;           /* espaço interno */
+  border: 1px solid #c9c9c9; /* borda cinza clara */
+  border-radius: 4px;     /* cantos arredondados */
+  background: #fff;       /* fundo branco */
+  outline: none;          /* remove borda azul padrão ao clicar */
+}
+
+/* Quando o campo está em foco (clicado), destacamos com azul */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0077b6;                  /* muda a cor da borda */
+  box-shadow: 0 0 0 3px rgba(0,119,182,0.15); /* brilho azul claro */
+}
+
+/* Campo do tipo color (caixa de seleção de cor) já tem UI própria */
+input[type="color"] {
+  padding: 2px;
+}
+
+/* Campos somente leitura aparecem em cinza claro */
+input[readonly] {
+  background: #f6f6f6;
+  color: #666;
+}
+
+/* Campos desabilitados (disabled) ficam mais apagados */
+input:disabled {
+  background: #f0f0f0;
+  color: #999;
+  cursor: not-allowed;  /* mostra cursor de "não permitido" */
+}
+
+/* ====== RADIOS E CHECKBOXES ====== */
+
+/* Coloca radios e checkboxes na mesma linha do texto */
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;      /* mantém lado a lado */
+  width: auto;                /* não ocupa toda a linha */
+  margin-right: 6px;          /* espaço antes do label */
+  transform: translateY(1px); /* ajuste vertical */
+}
+
+/* Os labels que vêm depois do radio/checkbox ficam inline também */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  display: inline-block;
+  font-weight: normal;        /* não precisa ser negrito */
+  margin-right: 14px;         /* espaço entre opções */
+  margin-bottom: 8px;
+}
+
+/* ====== SLIDER (range) + OUTPUT ====== */
+
+/* Coloca o input range e a saída (output) na mesma linha */
+input[type="range"],
+output {
+  display: inline-block;
+  width: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+/* ====== SELECT MÚLTIPLO ====== */
+
+/* Apenas para dar um pouco mais de conforto */
+select[multiple] {
+  padding: 6px;
+}
+
+/* ====== BOTÕES ====== */
+
+/* Estilo básico dos botões */
+button {
+  padding: 9px 14px;                  /* espaço interno */
+  border: none;                       /* sem borda */
+  border-radius: 4px;                 /* cantos arredondados */
+  background-color: #0077b6;          /* cor azul */
+  color: #fff;                        /* texto branco */
+  cursor: pointer;                    /* cursor de mãozinha */
+  transition: background-color 0.25s ease; /* efeito suave ao passar mouse */
+  display: inline-block;              /* ficam lado a lado */
+  margin-top: 8px;
+}
+
+/* Espaço entre botões que aparecem em sequência */
+button + button {
+  margin-left: 8px;
+}
+
+/* Cor mais escura quando o mouse passa por cima */
+button:hover {
+  background-color: #005f8a;
+}
+
+/* Botão do tipo reset fica em cinza */
+button[type="reset"] {
+  background-color: #6b7280;
+}
+
+/* E escurece ao passar o mouse */
+button[type="reset"]:hover {
+  background-color: #525866;
+}
+
+/* ====== MELHORIAS DE LEGIBILIDADE ====== */
+
+/* Garante mais espaço antes de cada seção com <h2> */
+form > * + h2 {
+  margin-top: 24px;
+}
+
+/* Os parágrafos dentro do formulário usados como título de grupo
+   (por exemplo: "Interesses:") ficam em negrito */
+form p {
+  margin: 12px 0 6px;
+  font-weight: bold;
+}
